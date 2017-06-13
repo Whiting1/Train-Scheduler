@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Train Schedules</title>
+	<!-- BootStrap Links -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+``` <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>```
+    
+	
+
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Duru Sans' rel='stylesheet'>
+
+	<script src="https://use.fontawesome.com/ae85989865.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+	
+</head>
+<body>
+<div class="container wrapper">
+	<div class="jumbotron header">
+		<h1 class="text-center"><i class="fa fa-train fa-1x" aria-hidden="true"></i>Anytime is Train Time</h1>
+		<p class="text-center"  aria-hidden="true">Choo Choo. Chee Chee.</p>
+	</div>
+<div class="btn btn-default" id="modal-input">Add Train</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="add-train">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">Add Departing Train</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row add-train-input">
+                        <div class="col-sm-12">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title text-center"><strong><i class="fa  fa-list-alt"></i> Please Enter Train Information</strong></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label for="search">Train Name</label>
+                                            <input type="text" class="form-control" id="train-name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="search">Destination</label>
+                                            <input type="text" class="form-control" id="destination">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="search">First Train Time (HH:mm - military time)</label>
+                                            <input type="text" class="form-control" id="start-time">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="search">Frequency</label>
+                                            <input type="text" class="form-control" id="frequency">
+                                        </div>
+                                        <!-- <button type="submit" class="btn btn-default" id="submit"><i class="fa fa-plus-square"></i> Submit</button> -->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" id="submit">Save changes</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+	<div class="row timesheet-schedule">
+		<div class="col-sm-12">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title text-left"><strong><i class="fa fa-clock-o" aria-hidden="true"></i>
+   Current Train Schedule</strong></h3>
+				</div>
+				<div class="panel-body" id="records">
+					<div class="row schedule-line">
+						<div class="col-sm-2 lead trainName textHead">Train Name</div>
+						<div class="col-sm-2 lead destination textHead">Destination</div>	
+						<div class="col-sm-2 lead frequency textHead">Frequency (min)</div>
+						<div class="col-sm-2 lead nextArrival textHead">Next Arrival</div>
+						<div class="col-sm-2 lead minAway textHead">Mintues Away</div>  
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="./js/app.js"></script>
+
+</div>
+</body>
+</html>
